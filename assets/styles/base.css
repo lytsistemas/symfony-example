@@ -1,0 +1,41 @@
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Changed from center to space-between */
+    align-items: center; /* Added to center items vertically */
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Added to center items vertically */
+}
+
+.navbar-user {
+    margin-left: auto;
+    color: white;
+    display: flex;
+    align-items: center; /* Added to center items vertically */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to Our Website!{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/unified.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="welcome-wrapper">
+        <h1>Welcome to Our Website! 🌟</h1>
+        <p>We are glad to have you here. Explore our features and enjoy your stay!</p>
+    </div>
+</div>
+{% endblock %}

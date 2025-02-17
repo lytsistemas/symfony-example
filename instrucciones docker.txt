@@ -1,0 +1,22 @@
+Pasos para reconstruir y ejecutar el contenedor
+
+Después de actualizar el Dockerfile, reconstruye la imagen y vuelve a ejecutar el contenedor:
+
+1️⃣ Reconstruir la imagen
+
+docker build -t symfony-dev .
+
+2️⃣ Ejecutar el contenedor
+
+docker run --rm -p 8000:8000 -v $(pwd):/var/www/html symfony-dev
+
+Con esta modificación, la CLI de Symfony se instalará correctamente en el contenedor y el comando symfony server:start funcionará sin problemas.
+
+docker run --name quirky_feistel -p 8000:8000 -v $(pwd):/var/www/html symfony-dev
+docker start quirky_feistel
+
+# Actualiza assets en Symfony
+docker exec -it wonderful_lehmann sh
+
+
+php bin/console asset-map:compile

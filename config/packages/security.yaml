@@ -1,0 +1,58 @@
+security:
+    # Configuración de los algoritmos de hash para las contraseñas de los usuarios
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    
+    # Configuración de los proveedores de usuarios
+    providers:
+        # Proveedor de usuarios que recarga el usuario desde la sesión y otras características
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    
+    # Configuración de los firewalls de seguridad
+    firewalls:
+        # Firewall para el entorno de desarrollo
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        
+        # Firewall principal
+        main:
+            lazy: true
+            provider: app_user_provider
+            form_login:
+                login_path: app_login
+                check_path: app_login
+                enable_csrf: true
+                default_target_path: /
+            logout:
+                path: app_logout
+                # Redirección después del logout
+                # target: app_any_route
+
+            # Activar diferentes formas de autenticación
+            # https://symfony.com/doc/current/security.html#the-firewall
+
+            # Impersonación de usuario
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Control de acceso para diferentes secciones del sitio
+    # Nota: Solo se usará el primer control de acceso que coincida
+    access_control:
+         - { path: ^/user, roles: ROLE_ADMIN }
+         - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/member, roles: ROLE_USER }
+
+# Configuración específica para el entorno de pruebas
+when@test:
+    security:
+        password_hashers:
+            # En pruebas, los hashes seguros no son importantes, por lo que se reducen los costos de recursos
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Valor más bajo posible para bcrypt
+                time_cost: 3 # Valor más bajo posible para argon
+                memory_cost: 10 # Valor más bajo posible para argon

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Member Area{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/unified.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="member-wrapper">
+        <h1>Welcome</h1>
+        <p>This area is only accessible to registered users with the "user" role.</p>
+        <p>Enjoy exclusive content and features tailored just for you!</p>
+    </div>
+</div>
+{% endblock %}

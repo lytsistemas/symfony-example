@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Area{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/unified.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="admin-wrapper">
+        <h1>Welcome, Admin!</h1>
+        <p>This area is only accessible to administrators.</p>
+        <p>Manage users, view reports, and configure settings from here.</p>
+    </div>
+</div>
+{% endblock %}

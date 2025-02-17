@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/user.css') }}">
+{% endblock %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <h1 class="center-title">Create new User</h1>
+
+    <div class="form-container center-content">
+        {{ include('user/_form.html.twig') }}
+    </div>
+{% endblock %}

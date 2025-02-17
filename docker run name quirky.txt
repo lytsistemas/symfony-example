@@ -1,0 +1,5 @@
+docker run --name quirky_feistel -p 8000:8000 -v $(pwd):/var/www/html symfony-dev
+docker start quirky_feistel
+docker exec -it quirky_feistel sh
+php bin/console asset-map:compile
+
