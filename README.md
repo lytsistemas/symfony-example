@@ -1,14 +1,14 @@
-# Symphony Web App
+# Symfony Web App
 
 ## Descripción
-Symphony Web App es una aplicación web desarrollada con Symfony con sección para usuario y administrador.
+Symfony Web App es una aplicación web desarrollada con el framework de Symfony que tiene secciones para usuario y administrador.
 
 ## Instalación
 Para instalar y configurar el proyecto, sigue estos pasos:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/lytsistemas/symphony-example.git
+    git clone https://github.com/lytsistemas/symfony-example.git
     ```
 2. Navega al directorio del proyecto:
     ```bash
